@@ -26,12 +26,20 @@
 
     /* Global Styles */
     body {
-      height: 100%;
       margin: 0;
       font-family: 'Arial', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Theme Switcher */
+    .theme-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 1.5rem;
     }
 
     /* Hero Section */
@@ -68,53 +76,76 @@
       background-color: var(--button-hover-bg);
     }
 
-    /* Theme Switcher */
-    .theme-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      font-size: 1.5rem;
-    }
-
-    /* About and Form Section */
+    /* About Section */
     #about {
       padding: 4rem;
       text-align: center;
     }
 
     .mentor-bio {
-      margin-bottom: 2rem;
-      padding: 1rem;
       background-color: var(--input-bg);
+      padding: 1rem;
       border-radius: 8px;
-      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       max-width: 600px;
       margin: 0 auto 2rem auto;
+      text-align: left;
+    }
+
+    /* Form Section */
+    #form-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+      background-color: var(--bg-color);
+    }
+
+    .form-card {
+      background-color: #41729f;
+      padding: 2rem;
+      border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .form-card h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
     }
 
     input, textarea {
-      width: 100%;
+      margin-bottom: 1rem;
       padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid var(--button-hover-bg);
-      background-color: var(--input-bg);
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: var(--button-bg);
-      color: var(--text-color);
       border: none;
       border-radius: 5px;
+      background-color: #5885af;
+      color: white;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    button {
+      padding: 10px;
+      background-color: var(--button-bg);
+      border: none;
+      border-radius: 5px;
+      color: var(--text-color);
       cursor: pointer;
       font-size: 16px;
     }
 
-    button[type="submit"]:hover {
+    button:hover {
       background-color: var(--button-hover-bg);
     }
   </style>
@@ -129,44 +160,48 @@
   <!-- Hero Section -->
   <div class="hero">
     <div>
-      <h1>Welcome to the Mentor Program</h1>
-      <p>Your journey to inspire others starts here</p>
+      <h1>Future Healers of Laredo Mentorship Program (FHLMP) Application</h1>
+      <p>Your journey to success starts here</p>
       <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
         Register
       </button>
     </div>
   </div>
 
-  <!-- About Me and Form Section -->
+  <!-- About Me Section -->
   <section id="about">
     <h2>About the Mentor</h2>
 
-    <!-- Mentor Bio Section -->
     <div class="mentor-bio">
       <h3>Jane Doe</h3>
       <p><strong>Experience:</strong> 10+ years in leadership and career development</p>
       <p><strong>Background:</strong> Jane has mentored dozens of individuals, focusing on personal growth and professional success.</p>
       <p><strong>Hobbies:</strong> Hiking, painting, and volunteering at community centers.</p>
     </div>
+  </section>
 
-    <h2>Sign up to Become a Mentee</h2>
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="b96744c9-1278-45c4-95b0-ae13cfd32bd1">
+  <!-- Form Section -->
+  <section id="form-section">
+    <div class="form-card">
+      <h2>Sign up to Become a Mentee</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="b96744c9-1278-45c4-95b0-ae13cfd32bd1">
 
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-      <label for="message">Why do you want to be mentored?</label>
-      <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+        <label for="message">Why do you want to be mentored?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
 
-      <button type="submit">Submit</button>
-    </form>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </section>
 
   <script>
