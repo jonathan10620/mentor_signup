@@ -19,23 +19,26 @@
     /* Form container with adjusted width */
     main {
       width: 100%;
-      max-width: 350px;  /* Make the form narrower */
+      max-width: 400px;  /* Adjusted width for better appearance */
       padding: 2rem;
       background-color: #2c2c2c;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Adjusting the input fields */
+    /* Limiting field width */
     input, textarea {
-      width: 100%; /* Full width within the form */
-      margin-bottom: 1rem; /* Add spacing between fields */
+      width: 90%; /* Slightly smaller width */
+      margin: 0 auto; /* Center align inside the form */
+      display: block;
+      margin-bottom: 1rem; /* Space between fields */
     }
 
     /* Full-width button with margin */
     button {
-      width: 100%;
-      margin-top: 1rem;
+      width: 90%;
+      margin: 1rem auto 0 auto;
+      display: block;
     }
 
     h1 {
