@@ -3,54 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2.0.6/css/pico.min.css">
   <title>Mentor Sign-up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-    /* Center the form on the page */
-    body {
+    /* Main styling for hero section */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      background-color: #1a1a1a;
-      margin: 0;
+      text-align: center;
+      color: white;
     }
 
-    /* Form container with adjusted width */
-    main {
-      width: 100%;
-      max-width: 400px;  /* Adjusted width for better appearance */
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero button {
+      padding: 1rem 2rem;
+      background-color: #5c67f2;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #4349c5;
+    }
+
+    /* About Me and Form Section */
+    #about {
+      padding: 4rem;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #about form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
       padding: 2rem;
-      background-color: #2c2c2c;
-      border-radius: 12px;
+      border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Limiting field width */
     input, textarea {
-      width: 90%; /* Slightly smaller width */
-      margin: 0 auto; /* Center align inside the form */
-      display: block;
-      margin-bottom: 1rem; /* Space between fields */
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    /* Full-width button with margin */
-    button {
-      width: 90%;
-      margin: 1rem auto 0 auto;
-      display: block;
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #5c67f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 1.5rem;
+    button[type="submit"]:hover {
+      background-color: #4349c5;
     }
   </style>
 </head>
-
 <body>
-  <main class="container">
-    <h1>Mentor Sign-up</h1>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div>
+      <h1>Welcome to the Mentor Program</h1>
+      <p>Your journey to inspire others starts here</p>
+      <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+        Register
+      </button>
+    </div>
+  </div>
+
+  <!-- About Me and Form Section -->
+  <section id="about">
+    <h2>Sign up to Become a Mentor</h2>
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="b96744c9-1278-45c4-95b0-ae13cfd32bd1">
 
@@ -63,11 +123,12 @@
       <label for="phone">Phone Number</label>
       <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-      <label for="message">Why do you want a mentor?</label>
+      <label for="message">Why do you want to mentor?</label>
       <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
 
       <button type="submit">Submit</button>
     </form>
-  </main>
+  </section>
+
 </body>
 </html>
