@@ -80,9 +80,12 @@
 
     /* About Section */
     #about {
-      padding: 2rem 4rem;
-      margin-bottom: 1rem; 
-      text-align: center;
+      padding: 1.5rem 2rem; /* Reduce padding to minimize extra space */
+      margin-bottom: 1rem; /* Add slight spacing between sections */
+      text-align: center; /* Keep text centered */
+      max-width: 800px; /* Limit the width to prevent it from stretching */
+      margin-left: auto; 
+      margin-right: auto; 
     }
 
     .mentor-bio {
@@ -99,10 +102,10 @@
     #form-section {
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 1rem 2rem;
-      margin-top: 0;
+      align-items: flex-start;
+      min-height: auto;
+      padding: 2rem;
+      margin-top: 1rem;
       background-color: var(--bg-color);
     }
 
@@ -180,24 +183,20 @@
   </div>
 
   <!-- About Me Section -->
-  <section id="about">
+<section id="about">
     <h2>About the Mentor</h2>
-
     <div class="mentor-bio">
       <h3>Jane Doe</h3>
       <p><strong>Experience:</strong> 10+ years in leadership and career development</p>
       <p><strong>Background:</strong> Jane has mentored dozens of individuals, focusing on personal growth and professional success.</p>
       <p><strong>Hobbies:</strong> Hiking, painting, and volunteering at community centers.</p>
     </div>
-  </section>
+</section>
 
-  <!-- Form Section -->
-  <section id="form-section">
+<section id="form-section">
     <div class="form-card">
       <h2>Sign up to Become a Mentee</h2>
       <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="b96744c9-1278-45c4-95b0-ae13cfd32bd1">
-
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -213,7 +212,7 @@
         <button type="submit">Submit</button>
       </form>
     </div>
-  </section>
+</section>
 
   <script>
     function toggleTheme() {
