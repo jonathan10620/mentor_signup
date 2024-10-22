@@ -6,39 +6,48 @@
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2.0.6/css/pico.min.css">
   <title>Mentor Sign-up</title>
   <style>
-    /* Centering the form */
+    /* Center the form on the page */
     body {
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background-color: #1a1a1a; /* Darker background for contrast */
+      background-color: #1a1a1a;
+      margin: 0;
     }
 
-    /* Limiting form width */
+    /* Form container with adjusted width */
     main {
       width: 100%;
-      max-width: 400px; /* Limit form width for sleek design */
+      max-width: 350px;  /* Make the form narrower */
       padding: 2rem;
-      background-color: #2c2c2c; /* Form background */
+      background-color: #2c2c2c;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    label {
+    /* Adjusting the input fields */
+    input, textarea {
+      width: 100%; /* Full width within the form */
+      margin-bottom: 1rem; /* Add spacing between fields */
+    }
+
+    /* Full-width button with margin */
+    button {
+      width: 100%;
       margin-top: 1rem;
     }
 
-    button {
-      margin-top: 1.5rem;
-      width: 100%; /* Full width button */
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
   </style>
 </head>
 
 <body>
   <main class="container">
-    <h1 style="text-align: center;">Mentor Sign-up</h1>
+    <h1>Mentor Sign-up</h1>
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="b96744c9-1278-45c4-95b0-ae13cfd32bd1">
 
@@ -51,7 +60,7 @@
       <label for="phone">Phone Number</label>
       <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-      <label for="message">Why do you want to mentor?</label>
+      <label for="message">Why do you want a mentor?</label>
       <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
 
       <button type="submit">Submit</button>
