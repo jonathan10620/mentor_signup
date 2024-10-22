@@ -14,6 +14,7 @@
       --button-bg: #B8E0D2;
       --button-hover-bg: #A7C4BC;
       --label-color: #4A5759;
+      --border-color: #D1D5DB;
     }
 
     /* Dark Theme Variables */
@@ -24,6 +25,7 @@
       --button-bg: #5885af;
       --button-hover-bg: #41729f;
       --label-color: #E8EBE4;
+      --border-color: #A7C4BC;
     }
 
     /* Global Styles */
@@ -132,11 +134,11 @@
     input, textarea {
       margin-bottom: 1rem;
       padding: 10px;
-      border: 1px solid var(--button-hover-bg);
+      
       border-radius: 5px;
       background-color: var(--input-bg);
       color: var(--text-color);
-      border: 2px solid transparent; /* Default transparent border */
+      border: 2px solid var(--border-color);
       transition: border-color 0.3s ease;
     }
     input:focus, textarea:focus {
