@@ -54,10 +54,13 @@
     }
   </style>
 </head>
+
+  
 <body>
   <div class="container">
     <h1>Mentor Sign-up</h1>
-    <form id="signup-form">
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="b96744c9-1278-45c4-95b0-ae13cfd32bd1">
       <input type="text" name="name" placeholder="Full Name" required />
       <input type="email" name="email" placeholder="Email" required />
       <input type="tel" name="phone" placeholder="Phone Number" required />
@@ -67,28 +70,7 @@
   </div>
 
   <script>
-    document.getElementById('signup-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData.entries());
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE',
-          ...data
-        })
-      })
-      .then(response => response.json())
-      .then(result => {
-        alert('Your sign-up was successful!');
-        event.target.reset();
-      })
-      .catch(error => {
-        alert('There was an error. Please try again later.');
-      });
-    });
+   
   </script>
 </body>
 </html>
