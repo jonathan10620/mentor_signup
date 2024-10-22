@@ -121,7 +121,7 @@
     .form-card h2 {
       text-align: center;
       margin-bottom: 1.5rem;
-      color: white;
+      color: var(--text-color);
     }
 
     form {
@@ -136,7 +136,17 @@
       border-radius: 5px;
       background-color: var(--input-bg);
       color: var(--text-color);
+      border: 2px solid transparent; /* Default transparent border */
+      transition: border-color 0.3s ease;
     }
+    input:focus, textarea:focus {
+  border-color: var(--button-hover-bg); /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+    [data-theme="dark"] input, 
+[data-theme="dark"] textarea {
+  border: 2px solid #A7C4BC; /* Light gray border in dark mode */
+}
 
     input::placeholder, textarea::placeholder {
       color: rgba(var(--text-color), 0.7);
